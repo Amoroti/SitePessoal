@@ -1,0 +1,163 @@
+/* Resetando margens e padding para garantir um layout mais previsível */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo fontes e cores principais do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    /* Removida a transição para hover */
+}
+
+/* Removido o efeito hover do texto principal */
+header h2:hover {
+    transform: none; /* Desativa o zoom */
+    color: inherit;  /* Mantém a cor original */
+}
+
+/* Navegação */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #216E8d;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    position: relative; /* Necessário para o efeito de hover */
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover nos itens de navegação */
+nav ul li a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Posiciona o efeito acima do link */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover para a linha abaixo do link de navegação */
+nav ul li a:hover::before {
+    transform: scaleX(1); /* Animação da linha de baixo para cima */
+}
+
+/* Seção principal */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Removida a transição de hover */
+}
+
+/* Removido o efeito de hover na seção */
+section:hover {
+    transform: none;
+}
+
+section p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Estilizando o texto do "Sobre" */
+#eu p {
+    text-align: justify;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Removida a transição de hover */
+}
+
+#eu p:hover {
+    background-color: inherit;
+    transform: none;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    position: relative;
+}
+
+footer .social-icons {
+    margin-top: 15px;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover nos ícones sociais */
+footer .social-icons a:hover {
+    color: #216E8d;
+}
+
+footer .social-icons a::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Posiciona o efeito abaixo do ícone */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #216E8d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover para a linha abaixo dos ícones sociais */
+footer .social-icons a:hover::after {
+    transform: scaleX(1); /* Animação da linha de baixo para cima */
+}
+
+/* Adicionando o estilo para o ícone do Font Awesome (caso use) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
