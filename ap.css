@@ -26,6 +26,12 @@ header h2 {
     font-weight: bold;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 /* Navegação */
 nav ul {
     list-style-type: none;
