@@ -24,13 +24,6 @@ header {
 header h2 {
     font-size: 2rem;
     font-weight: bold;
-    /* Removida a transição para hover */
-}
-
-/* Removido o efeito hover do texto principal */
-header h2:hover {
-    transform: none; /* Desativa o zoom */
-    color: inherit;  /* Mantém a cor original */
 }
 
 /* Navegação */
@@ -51,7 +44,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    position: relative; /* Necessário para o efeito de hover */
+    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -64,7 +57,7 @@ nav ul li a:hover {
 nav ul li a::before {
     content: "";
     position: absolute;
-    bottom: -5px; /* Posiciona o efeito acima do link */
+    bottom: -5px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -73,9 +66,8 @@ nav ul li a::before {
     transition: transform 0.3s ease;
 }
 
-/* Efeito de hover para a linha abaixo do link de navegação */
 nav ul li a:hover::before {
-    transform: scaleX(1); /* Animação da linha de baixo para cima */
+    transform: scaleX(1);
 }
 
 /* Seção principal */
@@ -85,12 +77,6 @@ section {
     background-color: #f2f2f2;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    /* Removida a transição de hover */
-}
-
-/* Removido o efeito de hover na seção */
-section:hover {
-    transform: none;
 }
 
 section p {
@@ -105,12 +91,10 @@ section p {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    /* Removida a transição de hover */
 }
 
 #eu p:hover {
     background-color: inherit;
-    transform: none;
 }
 
 /* Estilos para o rodapé */
@@ -144,7 +128,7 @@ footer .social-icons a:hover {
 footer .social-icons a::after {
     content: "";
     position: absolute;
-    top: 100%; /* Posiciona o efeito abaixo do ícone */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     width: 30px;
@@ -154,10 +138,50 @@ footer .social-icons a::after {
     transition: transform 0.3s ease;
 }
 
-/* Efeito de hover para a linha abaixo dos ícones sociais */
 footer .social-icons a:hover::after {
-    transform: scaleX(1); /* Animação da linha de baixo para cima */
+    transform: scaleX(1);
 }
 
-/* Adicionando o estilo para o ícone do Font Awesome (caso use) */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 1.5rem; /* Reduzir o tamanho do título */
+    }
+
+    nav ul {
+        flex-direction: column; /* Torna a navegação vertical */
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Aumenta o espaçamento entre os itens */
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px; /* Diminui o tamanho dos ícones sociais */
+    }
+}
+
+@media (max-width: 480px) {
+    header h2 {
+        font-size: 1.2rem; /* Diminui ainda mais o título em telas muito pequenas */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Ajuste do espaçamento */
+    }
+
+    footer .social-icons a {
+        font-size: 18px; /* Diminui ainda mais os ícones */
+    }
+}
+
